@@ -1,0 +1,18 @@
+services:
+  db:
+    container_name: postgres
+    image: postgres:17.1-alpine3.20
+    environment:
+      POSTGRES_DB: enigmadb
+      POSTGRES_USER: Maciej
+      POSTGRES_PASSWORD: password
+    ports:
+      - 5432:5432
+    restart: unless-stopped
+
+  adminer:
+    container_name: adminer
+    image: adminer
+    restart: unless-stopped
+    ports:
+      - 8081:8080
